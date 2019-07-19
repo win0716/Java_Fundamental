@@ -1,7 +1,7 @@
 package java_20190719;
 //public은 파일이름과 동일한 클래스에만 추가할 수 있음
 public class A {
-	S tring name;
+	String name;
 	int age;
 	
 	public void m() {
