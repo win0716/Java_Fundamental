@@ -8,7 +8,12 @@ public class LotteryDemo2 {
 			
 			for(int i = 0 ; i<lotto.length;i++) {
 				double random = math.random();
-				in
+				int temp = (int) (random * 45) + 1;
+				
+				if ( i == 0) {
+					lotto[i] = temp;
+				}else {
+				boolean isExusted = false;
 			}
 		}
 		
@@ -20,10 +25,16 @@ public class LotteryDemo2 {
 		
 		for(int i = 0 ; i<lotto.length;i++) {
 			double random = Math.random();
-			int temp = (int)(random * 45) + 1;{
-			int lotto[i] != temp;
+			int temp = (int)(random * 45) + 1;
+			i=(i==0);{
+				lotto[i]=temp;
+			}else {
+				boolean isexisted = false;
+				for(int j=0;j=1;)
+						
 			}
-			lotto[i] = temp;
+				
+			}
              	
 						} 
 	 
