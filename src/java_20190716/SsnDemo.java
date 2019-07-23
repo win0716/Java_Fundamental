@@ -19,8 +19,9 @@ public class SsnDemo {
 
 		// 1. 각자리수를 2부터 9까지 곱하고 다시 2-5까지 곰해서 합을 구함
 
-		int sum = a1 * 2 + a2 * 3 + a3 * 4 + a4 * 5 + a5 * 6 + a6 * 7 + b1 * 8 + b2 * 9 + b3 * 2 + b4 * 3 + b5 * 4
-				+ b6 * 5;
+		int sum = a1 * 2 + a2 * 3 + a3 * 4 + a4 * 5 
+				+ a5 * 6 + a6 * 7 + b1 * 8 + b2 * 9 
+				+ b3 * 2 + b4 * 3 + b5 * 4 + b6 * 5;
 
 		// 2. 총합을 11로 나눈 나머지를 구한다.
 								//다른방법
@@ -39,7 +40,7 @@ public class SsnDemo {
 		} else {
 			System.out.println("비 정상적인 주민번호");
 		}
-		System.out.println("오늘은 그만");
+		
 		
 	}
 
