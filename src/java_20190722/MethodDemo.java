@@ -37,7 +37,8 @@ public class MethodDemo {
 	}
 	    
 	public static void main(String[] arge) {
-		
+		//한번 사용할거면 이렇게 사용해도 된다. 아래 이미 해봣다!!
+		//long sum = new MethodDemo().plus(10, 20); 
 		MethodDemo m1 = new MethodDemo();
 		//인스턴스 메서드의 사용방법
 		//객체 생성한 후에 reference(m1) 를 이용해서 호출하면 됨

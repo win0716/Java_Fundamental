@@ -15,7 +15,12 @@ public class Member {
 	
 	//name 에 대한 setter 메서드 => 인스턴스 name 정보를 변경할 수 있는 메서드 
 	
-
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
@@ -32,7 +37,7 @@ public class Member {
 		this.addr2 = addr2;
 	}
 	public String getSsn1() {
-		return addr2;
+		return ssn2;
 	}
 	public void setSsn1(String ssn1) {
 		this.ssn1 = ssn1;
@@ -45,13 +50,20 @@ public class Member {
 		this.ssn2 = ssn2;
 	}
 	public String getSsn2() {
-		return = ssn2;
+		return  ssn2;
 	}
 	public void setAge(int age) {
 		this.age= age;
 	
 	}
 	publoc String getAge() {
-		return = age;
+		return age;
 	}
+
+public String getRegdate() {
+	return regdate;
+}
+public void setRegdate(String regdate) {
+	this.regdate = regdate;
+}
 }

@@ -46,7 +46,7 @@ public class Calendar {
 		return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 	}
 
-	public int getLastDay(int year, int month) {
+    private int getLastDay(int year, int month) {
 		int[] monthArray = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 		boolean isLeafYear = isLeafYear(year);

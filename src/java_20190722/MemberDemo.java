@@ -15,6 +15,7 @@ public class MemberDemo {
 		m.setRegdate("2019-07-22");
 		System.out.println(m.getName());
 		System.out.println(m.getAddr1());
+		System.out.println(m.getAddr2());
 		System.out.println(m.getSsn());
 		System.out.println(m.getAge());		
 		System.out.println(m.getRegdate());
