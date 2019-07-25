@@ -10,7 +10,6 @@ public class Practice {
 	private String sdate;
 	private String edate;
 	private String regdate;
-	
 	public int getSeq() {
 		return seq;
 	}
@@ -29,7 +28,7 @@ public class Practice {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int Getprice() {
+	public int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
@@ -47,6 +46,23 @@ public class Practice {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public String getSdate() {
+		return sdate;
+	}
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
+	}
+	public String getEdate() {
+		return edate;
+	}
+	public void setEdate(String edate) {
+		this.edate = edate;
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
 	
-
-}
+}	
