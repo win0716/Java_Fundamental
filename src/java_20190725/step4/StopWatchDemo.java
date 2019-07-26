@@ -27,6 +27,7 @@ public class StopWatchDemo {
 		
 		double elapsedTime = sn.getElapsedTime();
 		System.out.printf("경과시간 : %.9f", elapsedTime);
+		System.out.println();
 
 	}
 
