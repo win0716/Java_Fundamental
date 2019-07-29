@@ -2,7 +2,7 @@ package java_20190725;
 
 public class ShapeDemo {
 	//추상 클래스의 다형성
-	public static void run(Shape s) {
+	public static void run(Shape s) {//shape s = new rectangle();
 		s.draw();
 	}
 	//public static void run(Rectangle r){
@@ -24,7 +24,7 @@ public class ShapeDemo {
 		//s2.draw();
 				
 		run(new Circle());
-		
+	
 		
 	
 	}
