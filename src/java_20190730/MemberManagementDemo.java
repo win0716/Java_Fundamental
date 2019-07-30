@@ -29,7 +29,8 @@ public class MemberManagementDemo {
 			insert();
 			//System.out.println("insert....");
 		} else if (selectedIndex.equals("2")) {
-			System.out.println("update....");
+			
+			//System.out.println("update....");
 		} else if (selectedIndex.equals("3")) {
 			System.out.println("delete....");
 		} else if (selectedIndex.equals("4")) {
