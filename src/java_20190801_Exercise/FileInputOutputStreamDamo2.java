@@ -14,12 +14,13 @@ public class FileInputOutputStreamDamo2 {
 			fos = new FileOutputStream("c:\\dev\\test\\2019\\8\\1\\jdk.exe");
 
 
-			int readByteCount =0;
+			int readByteCount = 0;
 			byte[] b = new byte[1024*30];
 			long start = System.currentTimeMillis();
-			while((readByteCount= fis.read(b)) !=-1) {
+			while((readByteCount = fis.read (b)) != -1){
 				fos.write(b,0,readByteCount);
 			}
+			
 			
 			
 			long end = System.currentTimeMillis();
