@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileInputOutputStreamDemo2 {
+	//중요
 	public static void main(String[] args) {
 		FileInputStream fis = null;
 		FileOutputStream fos = null;
