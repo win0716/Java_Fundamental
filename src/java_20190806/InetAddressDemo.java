@@ -2,7 +2,7 @@ package java_20190806;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
+//외우기
 public class InetAddressDemo {
 	public static void main(String[] args) throws UnknownHostException {
 		InetAddress i = InetAddress.getLocalHost();
