@@ -34,14 +34,14 @@ public class FileClient {
 
 			osw = new OutputStreamWriter(out);
 			bw = new BufferedWriter(osw);
-			bw.write("java-11.pdf");
+			bw.write("java-12.pdf");
 			bw.newLine();
 			bw.flush();
 
 			in = socket.getInputStream();
-			File f = new File("C:\\dev\\test\\network");
+			File f = new File("C:\\dev\\test");
 			f.mkdirs();
-			f = new File(f, "java-11.pdf");
+			f = new File(f, "java-12.pdf");
 			fos = new FileOutputStream(f);
 			byte[] readBytes = new byte[1024 * 8];
 			int readByteCount = 0;
@@ -76,7 +76,7 @@ public class FileClient {
 	}
 
 	public static void main(String[] args) {
-		new FileClient("192.168.0.75", 4000).run();
+		new FileClient("192.168.0.52", 4000).run();
 	}
 
 }
