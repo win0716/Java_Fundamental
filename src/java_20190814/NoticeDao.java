@@ -3,6 +3,7 @@ package java_20190814;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -37,7 +38,7 @@ public class NoticeDao {
 		return single;
 	}
 
-	public boolean update(NoticeDto n) {
+	public boolean insert(NoticeDto n) {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -46,29 +47,164 @@ public class NoticeDao {
 		try {
 			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
 			StringBuffer sql = new StringBuffer();
-			sql.append("insert into notice(num, writer, title, content,regdate ")
+			sql.append("insert into notice(num, writer, title, content,regdate) ");
+			sql.append("values(?,?,?,?,?)");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			
+			pstmt.setInt(index++, n.getNum());
+			pstmt.setString(index++, n.getWriter());
+			pstmt.setString(index++, n.getTitle());
+			pstmt.setString(index++, n.getContent());
+			pstmt.setString(index, n.getRegdate());
+			
+			pstmt.executeUpdate();
+			
+			
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+			}catch (SQLException e) {
+				
+			}
 		}
 		   
 		//코딩
 	    return isSuccess;
 		
 	}
-
-	public boolean delete(int num) {
+	public boolean update(NoticeDto n) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
 		boolean isSuccess = false;
-		// 코딩
+		int index = 1;
+		
+		try {
+			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
+			StringBuffer sql = new StringBuffer();
+			sql.append("UPDATE nitice ");
+			sql.append("SET writer = ? ,  title = ? , content = ? , regdate = ?");
+			sql.append("WHERE num = ? ");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			
+			pstmt.setString(index++, n.getWriter());
+			pstmt.setString(index++, n.getTitle());
+			pstmt.setString(index++, n.getContent());
+			pstmt.setString(index++, n.getRegdate());
+			pstmt.setInt(index++, n.getNum());
+			
+			pstmt.executeUpdate();
+			isSuccess = true;
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			
+		}finally{
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+				
+			}catch (SQLException e2) {
+				
+			}
+		}
+		
+		return isSuccess;
+				
+	}
+	
+	public boolean delete(int num) {
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		boolean isSuccess = false;
+		int index = 1;
+		try {
+			con = DriverManager.getConnection("jdbc:mariadb://localhost/kic", "kic12", "kic12");
+			
+			StringBuffer sql = new StringBuffer();
+			sql.append("DELETE FROM notice ");
+			sql.append("WHERE num = ? ");
+			
+			pstmt = con.prepareStatement(sql.toString());
+			
+			pstmt.setInt(index, num);
+			
+			pstmt.executeUpdate();
+			
+			isSuccess = true;
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if (pstmt != null) pstmt.close();
+				if (con != null) con.close();
+				
+			}catch (SQLException e2) {
+				
+			}
+		}
+		
 		return isSuccess;
 
 	}
 
 	public ArrayList<NoticeDto> select() {
+		
+		Connection con= null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
 		ArrayList<NoticeDto> list = new ArrayList<NoticeDto>();
-		// 코딩
+		int index = 1;
+		
+		try {
+			con = DriverManager.getConnection("jdbc:mysql://localhost/kic?autoReconnect=true", "kic12", "kic12");
+			StringBuffer sql = new StringBuffer();
+			sql.append("SELECT num, writer, title, content, regdate ");
+			sql.append("FROM notice ");
+			sql.append("ORDER BY num " );
+			
+			pstmt = con.prepareStatement(sql.toString());
+			
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				index = 1;
+				int num = rs.getInt(index++);
+				String writer = rs.getString(index++);
+				String title = rs.getString(index++);
+				String content = rs.getString(index++);
+				String regdate = rs.getString(index);
+				list.add(new NoticeDto(num, writer, title, content, regdate));
+				
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally {
+			try {
+				if (rs != null) rs.close();
+				if (con != null) con.close();
+				if (pstmt != null) pstmt.close();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+				
 		return list;
 	}
-
 }
