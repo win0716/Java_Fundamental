@@ -7,7 +7,7 @@ public class NoticeDto {
 	private String title;
 	private String content;
 	private String regdate;
-	public NotoceDto(int num, String writer, String title, String content, String regdate) {
+	public NoticeDto(int num, String writer, String title, String content, String regdate) {
 		super();
 		this.num = num;
 		this.writer = writer;
