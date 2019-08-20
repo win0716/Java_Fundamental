@@ -34,14 +34,14 @@ public class FileClient {
 
 			osw = new OutputStreamWriter(out);
 			bw = new BufferedWriter(osw);
-			bw.write("java-12.pdf");
+			bw.write("test.mp4");
 			bw.newLine();
 			bw.flush();
 
 			in = socket.getInputStream();
 			File f = new File("C:\\dev\\test");
 			f.mkdirs();
-			f = new File(f, "java-12.pdf");
+			f = new File(f, "test.mp4");
 			fos = new FileOutputStream(f);
 			byte[] readBytes = new byte[1024 * 8];
 			int readByteCount = 0;
