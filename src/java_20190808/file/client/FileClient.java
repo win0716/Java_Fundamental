@@ -9,6 +9,8 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+
+
 public class FileClient {
 	private String ip;
 	private int port;
@@ -34,14 +36,14 @@ public class FileClient {
 
 			osw = new OutputStreamWriter(out);
 			bw = new BufferedWriter(osw);
-			bw.write("test.mp4");
+			bw.write("homework_20190905.docx");
 			bw.newLine();
 			bw.flush();
 
 			in = socket.getInputStream();
 			File f = new File("C:\\dev\\test");
 			f.mkdirs();
-			f = new File(f, "test.mp4");
+			f = new File(f, "homework_20190905.docx");
 			fos = new FileOutputStream(f);
 			byte[] readBytes = new byte[1024 * 8];
 			int readByteCount = 0;
@@ -80,3 +82,5 @@ public class FileClient {
 	}
 
 }
+
+

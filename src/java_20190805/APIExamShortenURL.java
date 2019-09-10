@@ -1,6 +1,6 @@
 package java_20190805;
 
-import bonus.Utility;
+import kr.co.kic.dev1.util.Utility;
 
 public class APIExamShortenURL {
 	  public static void main(String[] args) {

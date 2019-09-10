@@ -15,7 +15,7 @@ public class APIExamCaptchaNkeyResult {
 	        try {
 	            String code = "1"; // 키 발급시 0,  캡차 이미지 비교시 1로 세팅
 	            String key = "i16N4CwqInd7cUQu"; // 캡차 키 발급시 받은 키값
-	            String value = "8fhc24ts"; // 사용자가 입력한 캡차 이미지 글자값
+	            String value = "8u5xe9k"; // 사용자가 입력한 캡차 이미지 글자값
 	            String apiURL = "https://openapi.naver.com/v1/captcha/nkey?code=" + code +"&key="+ key + "&value="+ value;
 
 	            URL url = new URL(apiURL);
